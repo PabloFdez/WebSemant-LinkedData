@@ -1,0 +1,965 @@
+[
+  {
+    "op": "core/recon",
+    "description": "Reconcile cells in column comunidad to type http://dbpedia.org/ontology/AdministrativeRegion",
+    "columnName": "comunidad",
+    "config": {
+      "mode": "standard-service",
+      "service": "http://127.0.0.1:3333/extension/rdf-extension/services/dbpedia",
+      "identifierSpace": "http://www.ietf.org/rfc/rfc3986",
+      "schemaSpace": "http://www.ietf.org/rfc/rfc3986",
+      "type": {
+        "id": "http://dbpedia.org/ontology/AdministrativeRegion",
+        "name": "dbo:AdministrativeRegion"
+      },
+      "autoMatch": true,
+      "columnDetails": []
+    },
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    }
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column tipo_elem",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "tipo_elem",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "553"
+        ],
+        "to": "Semaforo"
+      }
+    ]
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column tipo_elem",
+    "columnName": "tipo_elem"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column gid",
+    "columnName": "gid"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column icruce",
+    "columnName": "icruce"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Comunidad de Madrid (http://dbpedia.org/resource/Community_of_Madrid) for cells containing \"Comunidad de Madrid\" in column comunidad",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "comunidad",
+    "similarValue": "Comunidad de Madrid",
+    "judgment": "matched",
+    "match": {
+      "id": "http://dbpedia.org/resource/Community_of_Madrid",
+      "name": "Comunidad de Madrid",
+      "score": 1,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column URI_Comunidad at index 7 based on column comunidad using expression grel:cell.recon.match.id",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "newColumnName": "URI_Comunidad",
+    "columnInsertIndex": 7,
+    "baseColumnName": "comunidad",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "1"
+        ],
+        "to": "CHAMBERÍ"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "20"
+        ],
+        "to": "SAN BLAS"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "9"
+        ],
+        "to": "ARAVACA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "15"
+        ],
+        "to": "PUEBLO NUEVO"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "5"
+        ],
+        "to": "CANILLEJAS"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "17"
+        ],
+        "to": "LOS ÁNGELES"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "8"
+        ],
+        "to": "EL PILAR"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "3"
+        ],
+        "to": "ATOCHA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "11"
+        ],
+        "to": "CARABANCHEL"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "10"
+        ],
+        "to": "CARABANCHEL"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "12"
+        ],
+        "to": "USERA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "7"
+        ],
+        "to": "VALLEHERMOSO"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "21"
+        ],
+        "to": "BARAJAS"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "4"
+        ],
+        "to": "SALAMANCA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "14"
+        ],
+        "to": "MORATALAZ"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column bdistrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "bdistrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "6"
+        ],
+        "to": "CHAMARTÍN"
+      }
+    ]
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column bdistrito to distrito",
+    "oldColumnName": "bdistrito",
+    "newColumnName": "distrito"
+  },
+  {
+    "op": "core/recon",
+    "description": "Reconcile cells in column distrito to type http://schema.org/Place",
+    "columnName": "distrito",
+    "config": {
+      "mode": "standard-service",
+      "service": "http://127.0.0.1:3333/extension/rdf-extension/services/dbpedia",
+      "identifierSpace": "http://www.ietf.org/rfc/rfc3986",
+      "schemaSpace": "http://www.ietf.org/rfc/rfc3986",
+      "type": {
+        "id": "http://schema.org/Place",
+        "name": "schema:Place"
+      },
+      "autoMatch": true,
+      "columnDetails": []
+    },
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    }
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Chamberí (Madrid) (http://es.dbpedia.org/resource/Chamberí_(Madrid)) for cells containing \"CHAMBERÍ\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "CHAMBERÍ",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Chamberí_(Madrid)",
+      "name": "Chamberí (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic San Blas - Canillejas (http://es.dbpedia.org/resource/San_Blas_-_Canillejas) for cells containing \"SAN BLAS\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "SAN BLAS",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/San_Blas_-_Canillejas",
+      "name": "San Blas - Canillejas",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic San Blas-Canillejas (http://dbpedia.org/resource/San_Blas_(Madrid)) for cells containing \"CANILLEJAS\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "CANILLEJAS",
+    "judgment": "matched",
+    "match": {
+      "id": "http://dbpedia.org/resource/San_Blas_(Madrid)",
+      "name": "San Blas-Canillejas",
+      "score": 0.5263158082962036,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Pueblo Nuevo (Madrid) (http://es.dbpedia.org/resource/Pueblo_Nuevo_(Madrid)) for cells containing \"PUEBLO NUEVO\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "PUEBLO NUEVO",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Pueblo_Nuevo_(Madrid)",
+      "name": "Pueblo Nuevo (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Los Ángeles (http://dbpedia.org/resource/Category:Los_Angeles,_California) for cells containing \"LOS ÁNGELES\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "LOS ÁNGELES",
+    "judgment": "matched",
+    "match": {
+      "id": "http://dbpedia.org/resource/Category:Los_Angeles,_California",
+      "name": "Los Ángeles",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "LOS ÁNGELES"
+        ],
+        "to": "VILLAVERDE"
+      }
+    ]
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Villaverde (http://dbpedia.org/resource/Villaverde_(Madrid)) for cells containing \"VILLAVERDE\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "VILLAVERDE",
+    "judgment": "matched",
+    "match": {
+      "id": "http://dbpedia.org/resource/Villaverde_(Madrid)",
+      "name": "Villaverde",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic El Pilar (Madrid) (http://es.dbpedia.org/resource/El_Pilar_(Madrid)) for cells containing \"EL PILAR\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "EL PILAR",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/El_Pilar_(Madrid)",
+      "name": "El Pilar (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Atocha (Madrid) (http://es.dbpedia.org/resource/Atocha_(Madrid)) for cells containing \"ATOCHA\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "ATOCHA",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Atocha_(Madrid)",
+      "name": "Atocha (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Usera (http://es.dbpedia.org/resource/Usera) for cells containing \"USERA\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "USERA",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Usera",
+      "name": "Usera",
+      "score": 1,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Carabanchel (http://es.dbpedia.org/resource/Carabanchel) for cells containing \"CARABANCHEL\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "CARABANCHEL",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Carabanchel",
+      "name": "Carabanchel",
+      "score": 1,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Vallehermoso (Madrid) (http://es.dbpedia.org/resource/Vallehermoso_(Madrid)) for cells containing \"VALLEHERMOSO\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "VALLEHERMOSO",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Vallehermoso_(Madrid)",
+      "name": "Vallehermoso (Madrid)",
+      "score": 0.5714285373687744,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Moratalaz (http://es.dbpedia.org/resource/Moratalaz) for cells containing \"MORATALAZ\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "MORATALAZ",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Moratalaz",
+      "name": "Moratalaz",
+      "score": 1,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Moncloa-Aravaca (http://dbpedia.org/resource/Moncloa-Aravaca) for cells containing \"ARAVACA\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "ARAVACA",
+    "judgment": "matched",
+    "match": {
+      "id": "http://dbpedia.org/resource/Moncloa-Aravaca",
+      "name": "Moncloa-Aravaca",
+      "score": 0.4355555295944214,
+      "types": [
+        ""
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Sanchinarro (http://es.dbpedia.org/resource/Sanchinarro) for cells containing \"SANCHINARRO\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "SANCHINARRO",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Sanchinarro",
+      "name": "Sanchinarro",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Salamanca (Madrid) (http://es.dbpedia.org/resource/Categoría:Salamanca_(Madrid)) for cells containing \"SALAMANCA\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "SALAMANCA",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Categoría:Salamanca_(Madrid)",
+      "name": "Salamanca (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "description": "Match topic Salamanca (Madrid) (http://es.dbpedia.org/resource/Salamanca_(Madrid)) for cells containing \"SALAMANCA\" in column distrito",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "distrito",
+    "similarValue": "SALAMANCA",
+    "judgment": "matched",
+    "match": {
+      "id": "http://es.dbpedia.org/resource/Salamanca_(Madrid)",
+      "name": "Salamanca (Madrid)",
+      "score": 100,
+      "types": [
+        "null"
+      ]
+    },
+    "shareNewTopics": false
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column distrito to barrio",
+    "oldColumnName": "distrito",
+    "newColumnName": "barrio"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column URI_barrio at index 4 based on column barrio using expression grel:cell.recon.match.id",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "newColumnName": "URI_barrio",
+    "columnInsertIndex": 4,
+    "baseColumnName": "barrio",
+    "expression": "grel:cell.recon.match.id",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column URI_barrio to barrio_URI",
+    "oldColumnName": "URI_barrio",
+    "newColumnName": "barrio_URI"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column URI_Comunidad to comunidad_URI",
+    "oldColumnName": "URI_Comunidad",
+    "newColumnName": "comunidad_URI"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column y to utm_y",
+    "oldColumnName": "y",
+    "newColumnName": "utm_y"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "description": "Save RDF schema skeleton",
+    "schema": {
+      "baseUri": "http://localhost:3333/",
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "Camara",
+          "uri": ""
+        }
+      ],
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "idelem",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://www.semanticweb.org/g90/ontology#idElem",
+              "curie": "Camara:idElem",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "idelem"
+              }
+            },
+            {
+              "uri": "http://www.semanticweb.org/g90/ontology#nombre",
+              "curie": "Camara:nombre",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "nombre"
+              }
+            },
+            {
+              "uri": "http://www.semanticweb.org/g90/ontology#activo",
+              "curie": "Camara:activo",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "activo"
+              }
+            },
+            {
+              "uri": "https://schema.org/Place",
+              "curie": "Camara:Place",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "barrio"
+              }
+            },
+            {
+              "uri": "http://www.semanticweb.org/g90/ontology#utm_x",
+              "curie": "Camara:utm_x",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "utm_x"
+              }
+            },
+            {
+              "uri": "http://www.semanticweb.org/g90/ontology#utm_y",
+              "curie": "Camara:utm_y",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "utm_y"
+              }
+            },
+            {
+              "uri": "https://schema.org/AdministrativeArea",
+              "curie": "Camara:AdministrativeArea",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "comunidad"
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "barrio",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2002/07/owl#sameAs",
+              "curie": "owl:sameAs",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "barrio_URI",
+                "rdfTypes": [],
+                "links": []
+              }
+            }
+          ]
+        },
+        {
+          "nodeType": "cell-as-resource",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "columnName": "comunidad",
+          "rdfTypes": [],
+          "links": [
+            {
+              "uri": "http://www.w3.org/2002/07/owl#sameAs",
+              "curie": "owl:sameAs",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "columnName": "comunidad_URI"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
